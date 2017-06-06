@@ -10,10 +10,10 @@ import Foundation
 
 
 class Artist{
-    let _id: Int
-    let _name: String
-    let _primaryGenre: Genre
-    let _album: [Album]
+    var _id: Int
+    var _name: String
+    var _primaryGenre: Genre
+    var _album: [Album]
     
     
     

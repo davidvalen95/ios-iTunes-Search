@@ -1,21 +1,28 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3FF2778A9C253B4B2BA9326FF59A87C82B34999D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : 9223372036854775807
+    "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : 9223372036854775807,
+    "3FF2778A9C253B4B2BA9326FF59A87C82B34999D" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "45E65FEB-A30D-4AFF-87C0-0BAEA555F530",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : "Projects\/"
+    "ff0bb4cb-26e6-4bb7-b847-d276f098bbc6" : "..\/..",
+    "3FF2778A9C253B4B2BA9326FF59A87C82B34999D" : "iTunes%20Search\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "iTunes Search",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Tries\/MyPlayground\/iTunes Search\/iTunes Search.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iTunes Search.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/davidvalen95\/ios-iTunes-Search.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3FF2778A9C253B4B2BA9326FF59A87C82B34999D"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/10.26.5.12\/dchat-4.2.0",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
