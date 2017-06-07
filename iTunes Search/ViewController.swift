@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        let searchEndpoint = ITunes.search(term: "taylor swift", mediaType: ItunesMedia.music(entity: .musicArtist, attribute: .artistTerm))
+        print(searchEndpoint)
+        let lookEndPoint  = ITunes.lookup(id: 15926031, entity: MusicEntity.album)
+        print(lookEndPoint)
     }
 
     override func didReceiveMemoryWarning() {

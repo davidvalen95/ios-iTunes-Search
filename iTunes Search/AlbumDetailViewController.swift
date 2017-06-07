@@ -49,7 +49,94 @@ class AlbumDetailViewController: UITableViewController {
 
 
     //MARK: - delegate
+    func coba  (data: Data?, response:URLResponse?, error:Error?){
+        
+    }
+
+    func encodeParameters(parameters: [String:Any]) -> String{
+        
+        var components: [(String,String)] = []
+        
+        let sortedKeys = parameters.keys.sorted{$0<$1}
+        
+        
+        
+        for key in sortedKeys{
+            let value:Any = parameters[key]
+            let queryComponents = queryComponent(keyy: key, valuee: value)
+            components.append(contentsOf: queryComponents)
+            
+        }
+        let encodedComponents:[String] = components.map{key, value in
+            return "\(key)=\(value)"
+            
+        }
+        
+        
+        return encodedComponents.joined(separator: "$")
+        
+        
+    }
     
+    func queryComponent(keyy: String, valuee:Any) -> [(String,String)]{
+       //rule 1
+        var components =  [(String,String)]()
+        if let dictionary = valuee as? [String: Any]{
+            for (nestedKey, value) in dictionary{
+                let nestedComponent = queryComponent(keyy: "\(keyy)[\(nestedKey)]", valuee: value)
+                
+                components.append(contentsOf: nestedComponent)
+            }
+        }else if let array = valuee as? [Any]{
+            for value in array{
+                let nestedComponent = queryComponent(keyy: "\(keyy)[]", valuee: value)
+                 components.append(contentsOf: nestedComponent)
+            }
+        }else{
+            let encodedKey = keyy.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let encodedValue = "\(valuee)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let component:(String,String) = (encodedKey,encodedValue)
+            components.append(component)
+        }
+        
+        
+        return components
+    }
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

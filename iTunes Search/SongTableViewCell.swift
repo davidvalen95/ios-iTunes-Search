@@ -30,3 +30,4 @@ class SongTableViewCell: UITableViewCell {
         _labelDate.text = songViewModel._runTime
     }
 }
+		
