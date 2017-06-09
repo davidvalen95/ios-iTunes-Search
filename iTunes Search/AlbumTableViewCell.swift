@@ -10,6 +10,7 @@ import UIKit
 
 class AlbumTableViewCell: UITableViewCell {
 
+
     static let reuseIdentifier:String = "AlbumCell"
     @IBOutlet weak var _labelDate: UILabel!
     @IBOutlet weak var _labelGenre: UILabel!
@@ -27,6 +28,7 @@ class AlbumTableViewCell: UITableViewCell {
 //    }
 
     func configureView(viewModel: AlbumCellViewmodel){
+        _imageViewArtwork.image = viewModel.artwork
         _labelAlbum.text = viewModel._title
         _labelGenre.text = viewModel._genre
         

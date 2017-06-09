@@ -7,17 +7,18 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct AlbumCellViewmodel{
     let _title:String
     let _releaseDate: String
     let _genre: String
-    
+    let artwork:UIImage
 }
 
 extension AlbumCellViewmodel{
     init(album:Album){
+        self.artwork = album.artWorkState == .downloaded ? album.artWork! : #imageLiteral(resourceName: "AlbumPlaceholder")
         _title = album._censoredName
         _genre = album._primaryGenre.name
         

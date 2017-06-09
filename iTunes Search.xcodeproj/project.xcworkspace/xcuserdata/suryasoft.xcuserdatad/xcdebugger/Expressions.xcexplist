@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ResultTableViewController.(prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ()).(closure #1):ResultTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AlbumTableViewController._artist.didset:AlbumTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "super.tableView.contentSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AlbumListDataSource.update(albums : [Album]) -&gt; ():AlbumListDataSource.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ResultTableViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():ResultTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.identifier">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AlbumDetailViewController.configureView(album : Album) -&gt; ():AlbumDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel._genre">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

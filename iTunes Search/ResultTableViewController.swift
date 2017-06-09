@@ -22,7 +22,7 @@ class ResultTableViewController: UITableViewController {
     
     let _dataSource:ResultDataSource = ResultDataSource()
     
-    
+    let client = ItunesAPiClient()
     override func viewDidLoad() {
         super.viewDidLoad()
         let height = UIApplication.shared.statusBarFrame.height
@@ -61,11 +61,16 @@ class ResultTableViewController: UITableViewController {
         if segue.identifier == "showAlbums"{
             if let indexPath = super.tableView.indexPathForSelectedRow{
                 let artist:Artist = _dataSource.getArtist(at: indexPath)
-                artist._album = Stub.albums
-                
-                
                 let albumListController: AlbumTableViewController = segue.destination as! AlbumTableViewController
                 albumListController._artist = artist
+                
+                
+                client.lookUpArtist(id: artist._id){artist, error in
+                    albumListController._artist = artist
+//                    albumListController.tableView.reloadData()
+                }
+                
+                
             }
         }
     }
@@ -75,7 +80,11 @@ class ResultTableViewController: UITableViewController {
 
 extension ResultTableViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        _dataSource.updateArtist(artists: [Stub.artist])
+        self.client.searchForArtist(term: searchController.searchBar.text!){[weak self] artists , error in
+            self?._dataSource.updateArtist(artists: artists)
+            self?.tableView.reloadData()
+            
+        }
         super.tableView.reloadData()
     }
 }

@@ -10,14 +10,23 @@ import UIKit
 
 class AlbumDetailViewController: UITableViewController {
 
-    @IBOutlet weak var _labelDate: UILabel!
-    @IBOutlet weak var _labelGenre: UILabel!
+
     @IBOutlet weak var _imageViewArtwork: UIImageView!
-    @IBOutlet weak var _labelALbum: UILabel!
+    @IBOutlet weak var _labelAlbum: UILabel!
+
+    @IBOutlet weak var _labelGenre: UILabel!
     
+    @IBOutlet weak var _labelDate: UILabel!
     
-    var _album: Album? = nil
-    
+    var _album: Album?{
+        didSet{
+            if let album = self._album{
+//                configureView(album: album)
+                _albumDetailDataSource.update(songs: album.songs)
+                super.tableView?.reloadData()
+            }
+        }
+    }
     lazy var _albumDetailDataSource: AlbumDetailDataSource = {
         return AlbumDetailDataSource(songs: self._album!.songs)
     }()
@@ -41,10 +50,12 @@ class AlbumDetailViewController: UITableViewController {
         
         
         
-        let viewModel:AlbumDetailViewModel = AlbumDetailViewModel(album: album)
-        _labelALbum.text = viewModel._title
-        _labelGenre.text = viewModel._genre
-        _labelDate.text = viewModel._releaseDate
+        if let viewModel:AlbumDetailViewModel = AlbumDetailViewModel(album: album){
+            
+            _labelGenre.text? = viewModel._genre
+            _labelDate.text? = viewModel._releaseDate
+            _labelAlbum.text? = viewModel._title
+        }
     }
 
 
@@ -102,8 +113,7 @@ class AlbumDetailViewController: UITableViewController {
         
         return components
     }
-    
-    
+ 
 }
 
 
